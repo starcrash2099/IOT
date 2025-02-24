@@ -1,0 +1,33 @@
+const int led1 = 2;    // Connect LED1 to D2 (Bright Light Indicator)
+const int led2 = 3;    // Connect LED2 to D3 (Moderate Light Indicator)
+const int ldrPin = A0; // LDR connected to A0
+
+void setup() {
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int ldrValue = analogRead(ldrPin); // Read LDR value (0-1023)
+  
+  // Print LDR reading to Serial Monitor
+  Serial.print("LDR Reading: ");
+  Serial.println(ldrValue);
+
+  // Control LEDs based on LdrValue
+  if (ldrValue > 700) {       // Bright light (>700)
+    digitalWrite(led1, HIGH); // Turn on LED1
+    digitalWrite(led2, LOW);  // Turn off LED2
+  } 
+  else if (ldrValue > 350) {  // Moderate light (350-700)
+    digitalWrite(led1, LOW);  // Turn off LED1
+    digitalWrite(led2, HIGH); // Turn on LED2
+  } 
+  else {                      // Dark (<350)
+    digitalWrite(led1, LOW);  // Turn off both LEDs
+    digitalWrite(led2, LOW);
+  }
+
+  delay(100); // Update every 100ms
+}
