@@ -1,0 +1,49 @@
+Here are the connections for all the experiments in the PDF:
+
+### Experiment 1: Familiarise with Arduino UNO and interface LED/Buzzer
+- *Breadboard* connects to Arduino UNO.
+- *LED* connects to pin 2 and GND via a 330Ω resistor.
+
+### Experiment 2: Interface Push Button
+- *Push Button* connects to pin 13 and GND.
+- *10KΩ Resistor* connects to pin 13 and 5V.
+- *LED* connects to pin 9 and GND via a 330Ω resistor.
+
+### Experiment 3: Interface LDR Sensor
+- *LDR Module* connects to A0 and GND.
+
+### Experiment 4: Control LEDs with LDR Readings
+- *LDR Module* connects to A0 and GND.
+- *3 LEDs* each connect to pins 3,4,5 and GND via 330Ω resistors.
+
+### Experiment 5: Interface DHT11 Sensor
+- *DHT11 Module* connects to pin 2, 5V and GND.
+
+### Experiment 6: Control LEDs with DHT Readings
+- *DHT11 Module* connects to pin 6, 5V and GND.
+- *3 LEDs* each connect to pins 3,4,5 and GND via 330Ω resistors.
+
+### Experiment 7: Interface HC-05 Bluetooth Module
+- *HC-05 Bluetooth Module* connects to RX, TX, 5V and GND.
+- *LED* connects to pin 13 and GND via a 330Ω resistor.
+
+### Experiment 8: Send Sensor Data via Bluetooth
+- *HC-05 Bluetooth Module* connects to RX, TX, 5V and GND.
+- *DHT11 Module* connects to pin 4, 5V and GND.
+
+### Experiment 9: ESP32 Development board
+- *ESP32* connects to USB Cable.
+
+### Experiment 10: Control LEDs using ESP32 and MQTT
+- *3 LEDs* each connect to pins GPIO 2,4,5 and GND via 330Ω resistors.
+
+### Experiment 11: BLYNK Cloud Platform
+- *3 LEDs* each connect to pins GPIO 2,4,5 and GND via 330Ω resistors.
+
+### Experiment 12: Upload Sensor Data to Blynk
+- *DHT-11* connects to GPIO 4 and GND.
+
+### Experiment 13: Control LEDs/Home appliances with Voice Assistants
+- *ESP32* connects to 4 Channel Relay, Breadboard, and 3 Bulb/Fan/LED.
+- *Relay Pins* connect to GPIO 22,32,21 and GND.
+
