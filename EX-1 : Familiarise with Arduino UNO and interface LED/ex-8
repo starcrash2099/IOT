@@ -1,0 +1,32 @@
+// Blynk with ESP32 and multiple LEDs
+#define BLYNK_TEMPLATE_ID "YourTemplateID"
+#define BLYNK_DEVICE_NAME "YourDevice"
+#define BLYNK_AUTH_TOKEN "YourAuthToken"
+
+#include <WiFi.h>
+#include <BlynkSimpleEsp32.h>
+
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "YourWiFiSSID";
+char pass[] = "YourWiFiPassword";
+
+int led1 = 5;
+int led2 = 18;
+
+BLYNK_WRITE(V0) {
+  digitalWrite(led1, param.asInt());
+}
+
+BLYNK_WRITE(V1) {
+  digitalWrite(led2, param.asInt());
+}
+
+void setup() {
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  Blynk.begin(auth, ssid, pass);
+}
+
+void loop() {
+  Blynk.run();
+}
