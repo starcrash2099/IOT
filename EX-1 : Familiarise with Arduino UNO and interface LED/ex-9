@@ -1,0 +1,30 @@
+// Example: DHT sensor data to Blynk
+#include <WiFi.h>
+#include <BlynkSimpleEsp32.h>
+#include <DHT.h>
+
+#define BLYNK_TEMPLATE_ID "YourTemplateID"
+#define BLYNK_DEVICE_NAME "YourDevice"
+#define BLYNK_AUTH_TOKEN "YourAuthToken"
+
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "YourWiFiSSID";
+char pass[] = "YourWiFiPassword";
+
+#define DHTPIN 4
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Blynk.begin(auth, ssid, pass);
+  dht.begin();
+}
+
+void loop() {
+  Blynk.run();
+  float temp = dht.readTemperature();
+  float hum = dht.readHumidity();
+  Blynk.virtualWrite(V0, temp);
+  Blynk.virtualWrite(V1, hum);
+  delay(2000);
+}
